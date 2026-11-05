@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.react-router/
+.npm-cache/
+.env
+.env.*
+!.env.example
+*.local
+*.local.mjs
+.browser-qa.local/
+*.log
+.DS_Store

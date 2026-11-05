@@ -1,0 +1,74 @@
+﻿.icon {
+  display: inline-block;
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: currentColor;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+}
+.large {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.arrow-up-right {
+  mask-image: url('../assets/icons/arrow-up-right.svg');
+}
+.boiler {
+  mask-image: url('../assets/icons/boiler.svg');
+}
+.check {
+  mask-image: url('../assets/icons/check.svg');
+}
+.close {
+  mask-image: url('../assets/icons/close.svg');
+}
+.drain {
+  mask-image: url('../assets/icons/drain.svg');
+}
+.faucet {
+  mask-image: url('../assets/icons/faucet.svg');
+}
+.floor-heating {
+  mask-image: url('../assets/icons/floor-heating.svg');
+}
+.heating {
+  mask-image: url('../assets/icons/heating.svg');
+}
+.leak {
+  mask-image: url('../assets/icons/leak.svg');
+}
+.menu {
+  mask-image: url('../assets/icons/menu.svg');
+}
+.moon {
+  mask-image: url('../assets/icons/moon.svg');
+}
+.phone {
+  mask-image: url('../assets/icons/phone.svg');
+}
+.pipes {
+  mask-image: url('../assets/icons/pipes.svg');
+}
+.radiator {
+  mask-image: url('../assets/icons/radiator.svg');
+}
+.shower {
+  mask-image: url('../assets/icons/shower.svg');
+}
+.sink {
+  mask-image: url('../assets/icons/sink.svg');
+}
+.sun {
+  mask-image: url('../assets/icons/sun.svg');
+}
+.toilet {
+  mask-image: url('../assets/icons/toilet.svg');
+}
+.valve {
+  mask-image: url('../assets/icons/valve.svg');
+}
+.wrench {
+  mask-image: url('../assets/icons/wrench.svg');
+}

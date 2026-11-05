@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "images": [
+    {
+      "key": "hero-plumber",
+      "destination": "public/images/hero/plumber-at-work.jpg",
+      "pexelsId": 29226620,
+      "source": "https://www.pexels.com/photo/professional-plumber-installing-a-radiator-pipe-29226620/",
+      "author": "Sergei Starostin",
+      "usage": "Hero candidate: real close-up of radiator pipe work; verify horizontal crop and readable text overlay",
+      "status": "selected"
+    },
+    {
+      "key": "radiators",
+      "destination": "public/images/services/radiator-installation.jpg",
+      "pexelsId": 29226620,
+      "source": "https://www.pexels.com/photo/professional-plumber-installing-a-radiator-pipe-29226620/",
+      "author": "Sergei Starostin",
+      "usage": "Installation and connection of radiators; temporary reuse of hero source",
+      "status": "selected"
+    },
+    {
+      "key": "plumbing-repair",
+      "destination": "public/images/services/plumbing-repair.jpg",
+      "pexelsId": 32588548,
+      "source": "https://www.pexels.com/photo/plumber-repairing-pipe-with-wrench-indoors-32588548/",
+      "author": "Bulat843",
+      "usage": "Pipe and plumbing repairs; vertical composition",
+      "status": "selected"
+    },
+    {
+      "key": "boiler-maintenance",
+      "destination": "public/images/services/boiler-maintenance.jpg",
+      "pexelsId": 7859953,
+      "source": "https://www.pexels.com/photo/plumber-repairing-power-source-7859953/",
+      "author": "Heiko Ruth",
+      "usage": "Boiler maintenance; NOT a finished boiler room installation",
+      "status": "selected"
+    },
+    {
+      "key": "sink-plumbing",
+      "destination": "public/images/services/sink-plumbing.jpg",
+      "pexelsId": 7220892,
+      "source": "https://www.pexels.com/photo/a-person-holding-brown-doorknob-7220892/",
+      "author": "cottonbro studio",
+      "usage": "Works under kitchen sink; inspect exact image before publishing",
+      "status": "review"
+    }
+  ],
+  "pending": [
+    {
+      "category": "underfloor-heating",
+      "destination": "public/images/services/underfloor-heating.jpg",
+      "note": "Find actual wet underfloor-heating pipes laid before screed; do not substitute copyrighted contractor photos"
+    },
+    {
+      "category": "boiler-room",
+      "destination": "public/images/services/boiler-room.jpg",
+      "note": "Find residential boiler room with actual pipework/manifold, suitable free commercial license"
+    },
+    {
+      "category": "water-supply",
+      "destination": "public/images/services/water-supply.jpg",
+      "note": "Find fitting/installation of water supply pipes"
+    },
+    {
+      "category": "sewerage",
+      "destination": "public/images/services/sewerage.jpg",
+      "note": "Find sanitary drain pipe installation"
+    },
+    {
+      "category": "bathroom-fixtures",
+      "destination": "public/images/services/bathroom-fixtures.jpg",
+      "note": "Find actual faucet, sink, or toilet installation rather than lifestyle shot"
+    }
+  ]
+}
