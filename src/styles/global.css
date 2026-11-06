@@ -1,59 +1,115 @@
+﻿@font-face {
+  font-family: 'Manrope';
+  src: url('../assets/fonts/manrope.ttf') format('truetype');
+  font-weight: 200 800;
+  font-display: swap;
+}
 :root {
-  font-family: system-ui, sans-serif;
-  color-scheme: light;
-  --color-text: #182b36;
-  --color-muted: #4c606b;
-  --color-background: #f5f8fa;
-  --color-surface: #ffffff;
-  --color-border: #697d87;
-  --color-accent: #005f73;
-  --color-hover: #e0edf0;
+  font-family: 'Manrope', sans-serif;
+  color-scheme: dark;
+  --color-text: #f5faff;
+  --color-muted: #bdcedc;
+  --color-background: #030e1d;
+  --color-surface: #0c2134;
+  --color-border: #365168;
+  --color-input-border: #7189a4;
+  --color-accent: #14c5ed;
+  --color-hover: #18364b;
   --color-bg: var(--color-background);
   --color-primary: var(--color-accent);
-  --color-primary-contrast: #ffffff;
+  --color-primary-contrast: #03202f;
   --color-focus: var(--color-accent);
-  --radius-control: 0.75rem;
+  --color-panel: rgb(12 33 52 / 36%);
+  --color-panel-hover: rgb(20 49 69 / 48%);
+  --color-panel-sheen: rgb(185 234 255 / 9%);
+  --color-panel-edge: rgb(196 235 255 / 22%);
+  --color-panel-shadow: rgb(0 3 12 / 38%);
+  --panel-background:
+    linear-gradient(145deg, var(--color-panel-sheen), transparent 55%),
+    var(--color-panel);
+  --panel-shadow:
+    0 22px 38px -10px var(--color-panel-shadow),
+    0 5px 12px -5px var(--color-panel-shadow),
+    inset 0 1px 0 var(--color-panel-edge),
+    inset 0 -1px 0 var(--color-panel-shadow);
+  --radius-control: 0.8rem;
+  --radius-panel: 1rem;
   --space-page: 1rem;
-  --space-section: 3rem;
-  --width-content: 72rem;
+  --space-section: clamp(3.5rem, 8vw, 6.5rem);
+  --width-content: 70rem;
   color: var(--color-text);
   background: var(--color-background);
+  caret-color: var(--color-accent);
+  scrollbar-color: var(--color-border) var(--color-background);
 }
-
-:root[data-theme='dark'] {
-  color-scheme: dark;
-  --color-text: #eef5f7;
-  --color-muted: #b0c3cd;
-  --color-background: #101b23;
-  --color-surface: #1b2d38;
-  --color-border: #829aa6;
-  --color-accent: #70d5e5;
-  --color-hover: #29434f;
-  --color-primary-contrast: #101b23;
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-text: #09263c;
+  --color-muted: #36546b;
+  --color-background: #edf5fa;
+  --color-surface: #ffffff;
+  --color-border: #9bb4c7;
+  --color-accent: #006c8b;
+  --color-hover: #d7e9f4;
+  --color-primary-contrast: #ffffff;
+  --color-panel: rgb(245 251 255 / 60%);
+  --color-panel-hover: rgb(245 251 255 / 74%);
+  --color-panel-sheen: rgb(255 255 255 / 38%);
+  --color-panel-edge: rgb(255 255 255 / 82%);
+  --color-panel-shadow: rgb(20 51 75 / 18%);
 }
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
-
 body {
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.65;
 }
-
 a {
   color: var(--color-accent);
+  text-underline-offset: 0.25em;
 }
-
+button,
+input,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+}
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  text-wrap: balance;
+  letter-spacing: -0.035em;
+}
 h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  line-height: 1.15;
-  overflow-wrap: anywhere;
+  font-size: clamp(2.1rem, 5.2vw, 3.75rem);
+  overflow-wrap: break-word;
 }
-
+h2 {
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+}
+h3 {
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
 :focus-visible {
-  outline: 2px solid var(--color-focus);
+  outline: 3px solid var(--color-focus);
   outline-offset: 4px;
+}
+::selection {
+  color: var(--color-primary-contrast);
+  background: var(--color-accent);
+}
+@media (min-width: 40rem) {
+  :root {
+    --space-page: 2rem;
+  }
 }

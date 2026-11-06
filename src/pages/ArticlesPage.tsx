@@ -1,4 +1,5 @@
-import { Breadcrumbs } from '../components/Breadcrumbs';
+﻿import { Breadcrumbs } from '../components/Breadcrumbs';
+import { Icon } from '../components/Icon';
 import { pageMeta } from '../lib/seo';
 import styles from './InnerPage.module.css';
 export function meta() {
@@ -19,12 +20,14 @@ export default function ArticlesPage() {
         ]}
       />
       <h1>Статьи</h1>
-      <p className={styles.lead}>Материалы готовятся к публикации.</p>
-      <p>
-        Опубликованных статей пока нет. Этот раздел исключён из индексации до
-        появления материалов.
-      </p>
-      <a href="/services/">Посмотреть направления услуг</a>
+      <section className={styles.empty} aria-labelledby="articles-status">
+        <Icon name="pipes" large />
+        <h2 id="articles-status">Материалы готовятся к публикации</h2>
+        <p>Опубликованных статей пока нет.</p>
+        <a href="/services/">
+          Посмотреть направления услуг <Icon name="arrow-up-right" />
+        </a>
+      </section>
     </main>
   );
 }

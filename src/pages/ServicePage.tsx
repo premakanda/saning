@@ -35,8 +35,12 @@ export default function ServicePage() {
           { label: service.title, path: service.path },
         ]}
       />
-      <Icon name={service.icon} large />
-      <h1>{service.title}</h1>
+      <div className={styles.serviceIntro}>
+        <span>
+          <Icon name={service.icon} large />
+        </span>
+        <h1>{service.title}</h1>
+      </div>
       <p className={styles.lead}>{service.description}</p>
       <p>{contacts.region}</p>
       <div className={styles.columns}>

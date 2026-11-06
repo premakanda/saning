@@ -1,0 +1,83 @@
+﻿{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T18:57:13.2246409Z",
+  "title": "Design System: Engineering scene study",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "panel",
+        "value": "0 22px 38px -10px var(--panel-shadow), 0 5px 12px -5px var(--panel-shadow), inset 0 1px 0 var(--panel-edge), inset 0 -1px 0 var(--panel-shadow)",
+        "purpose": "Glass service panels: layered offset and inset depth; theme colors are in DESIGN frontmatter."
+      },
+      {
+        "name": "primary",
+        "value": "0 8px 24px rgb(0 174 226 / 16%)",
+        "purpose": "Cyan action."
+      },
+      {
+        "name": "menu",
+        "value": "0 18px 40px rgb(0 0 0 / 25%)",
+        "purpose": "Mobile navigation."
+      }
+    ],
+    "motion": [
+      {
+        "name": "interaction",
+        "value": "background-color 160ms ease-out, color 160ms ease-out, border-color 160ms ease-out",
+        "purpose": "Only without reduced-motion preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "four-panels",
+        "value": "40rem"
+      },
+      {
+        "name": "desktop-header",
+        "value": "64rem"
+      },
+      {
+        "name": "messengers",
+        "value": "75rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary (dark)",
+      "kind": "button",
+      "refersTo": "primary-dark",
+      "description": "Temporary hero action specimen; no delivery.",
+      "html": "\u003cbutton class=\"ds-dark\" type=\"button\"\u003eВызвать мастера\u003c/button\u003e",
+      "css": ".ds-dark{min-height:3rem;padding:.8rem 1.25rem;border:1px solid transparent;border-radius:2rem;background:#14c5ed;color:#03202f;font-family:\u0027Boiler Manrope\u0027,sans-serif;font-size:.85rem;font-weight:750;box-shadow:0 8px 24px rgb(0 174 226 / 16%);cursor:pointer}.ds-dark:hover{filter:brightness(1.1)}.ds-dark:focus-visible{outline:3px solid #14c5ed;outline-offset:4px}"
+    },
+    {
+      "name": "Primary (light)",
+      "kind": "button",
+      "refersTo": "primary-light",
+      "description": "Temporary hero action specimen; no delivery.",
+      "html": "\u003cbutton class=\"ds-light\" type=\"button\"\u003eВызвать мастера\u003c/button\u003e",
+      "css": ".ds-light{min-height:3rem;padding:.8rem 1.25rem;border:1px solid transparent;border-radius:2rem;background:#006c8b;color:#ffffff;font-family:\u0027Boiler Manrope\u0027,sans-serif;font-size:.85rem;font-weight:750;box-shadow:0 8px 24px rgb(0 174 226 / 16%);cursor:pointer}.ds-light:hover{filter:brightness(1.1)}.ds-light:focus-visible{outline:3px solid #006c8b;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Immersive engineering scene — temporary study",
+    "overview": "Temporary header and hero with the owner\u0027s retained navy/cyan palette and updated domestic boiler-room equipment reference. The scene shows a wall boiler, indirect cylinder, manifolds and tidy small pipework rather than factory machinery. The owner approved the hero direction for this narrow refinement; production adoption and the proposed drop mark remain unapproved. The main site and lower sections remain unchanged; await owner approval before extending this language.",
+    "keyCharacteristics": [
+      "Full-bleed domestic boiler-room environment behind readable left-aligned HTML, with slim left-perimeter pipes and cyan lights.",
+      "Midnight navy, cyan and white, with an independent light alternative.",
+      "Pill actions and four restrained glass service panels."
+    ],
+    "rules": [],
+    "dos": [
+      "Do keep this language within the temporary header and hero.",
+      "Do preserve readable HTML against the scene in both themes.",
+      "Do retain illustration and proposed-mark disclosures."
+    ],
+    "donts": [
+      "Don\u0027t extend the direction before owner approval.",
+      "Don\u0027t present the scene as company project photography.",
+      "Don\u0027t promote preview tokens or proposed drop into production identity."
+    ]
+  }
+}

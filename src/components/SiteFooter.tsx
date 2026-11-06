@@ -1,5 +1,6 @@
 ﻿import { contacts, navigation } from '../config/contacts';
 import { MessengerLinks } from './MessengerLinks';
+import { Brand } from './Brand';
 import styles from './SiteLayout.module.css';
 
 export function SiteFooter() {
@@ -7,7 +8,13 @@ export function SiteFooter() {
     <footer className={styles.footer}>
       <div className={styles.footerGrid}>
         <div>
-          <h2>{contacts.brand}</h2>
+          <a
+            href="/"
+            aria-label={`${contacts.brand} — главная`}
+            className={styles.brand}
+          >
+            <Brand />
+          </a>
           <p>{contacts.description}</p>
           <p>{contacts.region}</p>
           <address className={styles.address}>
@@ -31,7 +38,10 @@ export function SiteFooter() {
       </div>
       <div className={styles.legal}>
         <span>© {contacts.brand}</span>
-        <span>Политика обработки персональных данных — на подготовке.</span>
+        {(import.meta.env.DEV ||
+          import.meta.env.VITE_LOCAL_PROTOTYPE === 'true') && (
+          <span>Локальный просмотр · отправка заявок не подключена</span>
+        )}
       </div>
     </footer>
   );

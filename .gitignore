@@ -10,3 +10,5 @@ dist/
 .browser-qa.local/
 *.log
 .DS_Store
+.impeccable/questions/
+.impeccable/review/

@@ -17,7 +17,7 @@ export function MobileMenu() {
         }
       }}
     >
-      <summary>
+      <summary aria-label="Открыть меню">
         <Icon name="menu" />
         <span>Меню</span>
       </summary>

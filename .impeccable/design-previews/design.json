@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T16:31:33.647Z",
+  "title": "Design System: АкваЛайнПрофи — temporary previews",
+  "extensions": {
+    "shadows": [],
+    "motion": [
+      {
+        "name": "interactive-colors",
+        "value": "background-color 140ms ease-out, color 140ms ease-out",
+        "purpose": "Links and buttons only under prefers-reduced-motion: no-preference."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "article-grid",
+        "value": "40rem"
+      },
+      {
+        "name": "split-layout",
+        "value": "52rem"
+      },
+      {
+        "name": "desktop-navigation",
+        "value": "72rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "minimal primary action (light preview)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Temporary concept action styling; isolated specimen has no submission behavior.",
+      "html": "<button type=\"button\" class=\"ds-minimal-primary\">Вызвать мастера</button>",
+      "css": ".ds-minimal-primary{display:inline-flex;align-items:center;justify-content:center;min-height:3.25rem;padding:1rem 1.5rem;background:#1649b6;color:#ffffff;border:1px solid #1649b6;border-radius:0px;font-family:'Preview Manrope',sans-serif;font-size:1rem;font-weight:700;cursor:pointer}.ds-minimal-primary:hover{filter:brightness(.93)}.ds-minimal-primary:focus-visible{outline:3px solid #1649b6;outline-offset:4px}"
+    },
+    {
+      "name": "engineering primary action (light preview)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Temporary concept action styling; isolated specimen has no submission behavior.",
+      "html": "<button type=\"button\" class=\"ds-engineering-primary\">Вызвать мастера</button>",
+      "css": ".ds-engineering-primary{display:inline-flex;align-items:center;justify-content:center;min-height:3.25rem;padding:1rem 1.5rem;background:#1d50be;color:#ffffff;border:1px solid #1d50be;border-radius:2px;font-family:'Preview Golos',sans-serif;font-size:1rem;font-weight:700;cursor:pointer}.ds-engineering-primary:hover{filter:brightness(.93)}.ds-engineering-primary:focus-visible{outline:3px solid #1d50be;outline-offset:4px}"
+    },
+    {
+      "name": "friendly primary action (light preview)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Temporary concept action styling; isolated specimen has no submission behavior.",
+      "html": "<button type=\"button\" class=\"ds-friendly-primary\">Вызвать мастера</button>",
+      "css": ".ds-friendly-primary{display:inline-flex;align-items:center;justify-content:center;min-height:3.25rem;padding:1rem 1.5rem;background:#1753bb;color:#ffffff;border:1px solid #1753bb;border-radius:999px;font-family:'Preview Nunito',sans-serif;font-size:1rem;font-weight:700;cursor:pointer}.ds-friendly-primary:hover{filter:brightness(.93)}.ds-friendly-primary:focus-visible{outline:3px solid #096c79;outline-offset:4px}"
+    },
+    {
+      "name": "Minimal phone field (light preview)",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Shared form geometry, shown in Minimal light colors.",
+      "html": "<label class=\"ds-field\">Телефон<input type=\"tel\" placeholder=\"+375 (__) ___-__-__\"></label>",
+      "css": ".ds-field{display:grid;gap:.7rem;color:#17242c;font-family:'Preview Manrope',sans-serif;font-size:.9rem;font-weight:650}.ds-field input{min-width:0;min-height:3rem;padding:.85rem;border:1px solid #8a969c;border-radius:0;background:#ffffff;color:#17242c;font:inherit}.ds-field input::placeholder{color:#53616a;opacity:1}.ds-field input:focus-visible{outline:3px solid #1649b6;outline-offset:4px}"
+    },
+    {
+      "name": "Friendly service panel (light preview)",
+      "kind": "card",
+      "refersTo": "friendly-card",
+      "description": "Rounded tonal panel geometry; text is an approved service title.",
+      "html": "<article class=\"ds-friendly-card\"><h3>Водоснабжение</h3></article>",
+      "css": ".ds-friendly-card{padding:1.5rem;border:1px solid #7b969a;border-radius:1.5rem;background:#f0f9f8;color:#143e49;font-family:'Preview Nunito',sans-serif}.ds-friendly-card h3{margin:0;font-size:1.15rem;line-height:1.35;font-weight:700}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Three temporary alternatives; no concept approved",
+    "overview": "Three temporary, unapproved alternatives for АкваЛайнПрофи: Modern Minimal, Premium Engineering and Clean & Friendly. This record describes local preview implementation only; no direction replaces the production identity. The owner will choose later.",
+    "keyCharacteristics": [
+      "Minimal: calm editorial rows, fine rules, panoramic photograph.",
+      "Engineering: ruled dossier grid, navy surfaces, manifold photograph.",
+      "Friendly: aqua and teal surfaces, blue action, rounded photographs and pills."
+    ],
+    "rules": [],
+    "dos": [
+      "Do keep all three concepts scoped to local previews until the owner chooses.",
+      "Do reuse approved contacts, service content, SVG icons and the existing ContactForm in both placements.",
+      "Do retain explicit illustrative-image and unpublished-article disclosures."
+    ],
+    "donts": [
+      "Don't publish these previews or promote their tokens into the production design system.",
+      "Don't claim illustrative photographs are company projects or topics are published articles.",
+      "Don't transmit or save form data or simulate successful delivery."
+    ]
+  }
+}

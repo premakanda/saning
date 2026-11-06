@@ -7,7 +7,7 @@ export function ThemeToggle({ compact = false }: { compact?: boolean }) {
   const isDark = useSyncExternalStore(
     subscribeToTheme,
     isDarkTheme,
-    () => false,
+    () => true,
   );
   return (
     <button

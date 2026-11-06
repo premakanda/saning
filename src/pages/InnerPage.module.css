@@ -1,41 +1,73 @@
-.page {
+﻿.page {
   width: min(100% - 2 * var(--space-page), var(--width-content));
   margin-inline: auto;
-  padding-block: 1.5rem 4rem;
+  padding-block: 1.5rem var(--space-section);
+  min-height: 65svh;
 }
 .page h1 {
-  max-width: 55rem;
-  margin-block: 1rem 1.5rem;
+  max-width: 48rem;
+  margin: 1.5rem 0;
 }
-.page h2 {
-  font-size: clamp(1.4rem, 3vw, 1.8rem);
+.page > h1 {
+  padding-top: 1rem;
 }
 .lead {
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  line-height: 1.7;
-  max-width: 55rem;
+  font-size: clamp(1rem, 2vw, 1.18rem);
+  line-height: 1.75;
+  max-width: 65ch;
   color: var(--color-muted);
+  margin-bottom: 2.5rem;
+}
+.serviceIntro {
+  display: grid;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+.serviceIntro > span {
+  display: grid;
+  place-items: center;
+  width: 4rem;
+  height: 4rem;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  color: var(--color-accent);
+  background: var(--panel-background);
+  box-shadow: var(--panel-shadow);
+}
+.serviceIntro h1 {
+  margin: 0;
 }
 .columns {
   display: grid;
   align-items: start;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 2.5rem;
+  margin-top: 3rem;
 }
 .columns > * {
   min-width: 0;
 }
+.columns h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  margin: 0 0 1.5rem;
+}
+.columns p {
+  color: var(--color-muted);
+}
+.columns > div > section + section {
+  margin-top: 3rem;
+}
 .card {
-  background: var(--color-surface);
+  background: var(--panel-background);
+  box-shadow: var(--panel-shadow);
   border: 1px solid var(--color-border);
-  border-radius: 1rem;
-  padding: clamp(1rem, 3vw, 2rem);
+  border-radius: var(--radius-panel);
+  padding: clamp(1.25rem, 3vw, 2rem);
 }
 .address {
   display: grid;
   font-style: normal;
   gap: 0.5rem;
-  margin-block: 1.5rem;
+  margin-block: 1.5rem 2rem;
 }
 .address a,
 .call,
@@ -45,28 +77,105 @@
   min-height: 2.75rem;
   overflow-wrap: anywhere;
 }
+.address a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+.address a:first-child {
+  font-size: clamp(1rem, 2.5vw, 1.45rem);
+  font-weight: 750;
+  color: var(--color-accent);
+}
+.address a:hover {
+  text-decoration: underline;
+}
+.card > h2:not(:first-child) {
+  margin-top: 2rem;
+}
 .note {
   color: var(--color-muted);
-  border-left: 3px solid var(--color-accent);
-  padding-left: 1rem;
+  font-size: 0.875rem;
+  padding-block: 1rem;
 }
 .subservice {
   border-bottom: 1px solid var(--color-border);
-  padding-block: 0.75rem;
+  padding-block: 1rem;
 }
 .subservice h3 {
   font-size: 1.1rem;
+  margin: 0;
+}
+.columns .subservice + .subservice {
+  margin-top: 0;
+}
+.call {
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 .related {
   border-top: 1px solid var(--color-border);
-  margin-top: 3rem;
+  margin-top: var(--space-section);
   padding-top: 2rem;
 }
+.related h2 {
+  font-size: 1.5rem;
+}
 .related ul {
-  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+.related li {
+  border-bottom: 1px solid var(--color-border);
+}
+.related a {
+  padding-block: 0.75rem;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.related a:hover {
+  text-decoration: underline;
+}
+.empty {
+  margin-block: 3rem;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  max-width: 46rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background: var(--panel-background);
+  box-shadow: var(--panel-shadow);
+}
+.empty > span {
+  color: var(--color-accent);
+}
+.empty p {
+  color: var(--color-muted);
+}
+.empty a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.empty a:hover {
+  text-decoration: underline;
 }
 @media (min-width: 48rem) {
   .columns {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1.1fr 1fr;
+    gap: 4rem;
+  }
+  .serviceIntro {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .related ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
   }
 }

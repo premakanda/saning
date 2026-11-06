@@ -1,5 +1,6 @@
 ﻿import type { Config } from '@react-router/dev/config';
 import { services } from './src/content/services';
+import { designPreviewPaths } from './src/design-preview/previewPaths';
 export default {
   appDirectory: 'src',
   buildDirectory: 'dist',
@@ -11,5 +12,9 @@ export default {
     '/services',
     '/articles',
     ...services.map((service) => service.path.replace(/\/$/, '')),
+    ...(process.env.VITE_LOCAL_PROTOTYPE === 'true' ||
+    process.argv.includes('dev')
+      ? designPreviewPaths
+      : []),
   ],
 } satisfies Config;

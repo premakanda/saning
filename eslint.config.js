@@ -10,6 +10,8 @@ export default tseslint.config(
       '.react-router/**',
       '.npm-cache/**',
       '.browser-qa.local/**',
+      '.github/skills/**',
+      '.impeccable/**',
       '*.local.mjs',
     ],
   },

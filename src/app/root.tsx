@@ -1,11 +1,19 @@
 import type { ReactNode } from 'react';
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
+import {
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useLocation,
+} from 'react-router';
 import '../styles/global.css';
 import { SiteLayout } from '../components/SiteLayout';
 import styles from './RootLayout.module.css';
 import { themeBootstrap } from '../lib/themeBootstrap';
 
 export function Layout({ children }: { children: ReactNode }) {
+  const isDesignPreview = useLocation().pathname.startsWith('/design-preview/');
   return (
     <html lang="ru" suppressHydrationWarning>
       <head>
@@ -23,7 +31,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <a className={styles.skipLink} href="#main-content">
           К содержимому
         </a>
-        <SiteLayout>{children}</SiteLayout>
+        {isDesignPreview ? children : <SiteLayout>{children}</SiteLayout>}
         <ScrollRestoration />
         <Scripts />
       </body>

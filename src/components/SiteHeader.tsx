@@ -3,6 +3,7 @@ import { ThemeToggle } from './ThemeToggle';
 import { MobileMenu } from './MobileMenu';
 import { Icon } from './Icon';
 import { MessengerLinks } from './MessengerLinks';
+import { Brand } from './Brand';
 import styles from './SiteLayout.module.css';
 
 export function SiteHeader() {
@@ -13,7 +14,7 @@ export function SiteHeader() {
         href="/"
         aria-label={`${contacts.brand} — главная`}
       >
-        {contacts.brand}
+        <Brand />
       </a>
       <nav className={styles.desktopNav} aria-label="Основная навигация">
         {navigation.map((item) => (

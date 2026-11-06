@@ -1,5 +1,4 @@
-import styles from '../pages/HomePage.module.css';
-
+﻿import styles from '../pages/HomePage.module.css';
 const steps = [
   ['Расскажите о задаче', 'Позвоните или откройте форму обращения.'],
   ['Уточняем детали', 'Обсуждаем объём работ, место и удобный способ связи.'],
@@ -8,7 +7,6 @@ const steps = [
     'Условия, материалы, стоимость и дальнейшие действия.',
   ],
 ];
-
 export function ProcessSteps() {
   return (
     <section
@@ -16,16 +14,13 @@ export function ProcessSteps() {
       className={styles.section}
       aria-labelledby="process-title"
     >
-      <p className={styles.eyebrow}>Понятный порядок</p>
       <h2 id="process-title">Как заказать сантехнические работы</h2>
-      <p className={styles.note}>
-        Предлагаемый процесс — на согласовании. Звонок и отправка заявки пока
-        недоступны.
-      </p>
-      <ol className={styles.threeColumns}>
+      <ol className={styles.steps}>
         {steps.map(([title, text], index) => (
-          <li className={styles.card} key={title}>
-            <span className={styles.number}>0{index + 1}</span>
+          <li key={title}>
+            <span className={styles.number} aria-hidden="true">
+              0{index + 1}
+            </span>
             <h3>{title}</h3>
             <p>{text}</p>
           </li>

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-06T19:17:39.030Z",
+  "title": "Design System: АкваЛайнПрофи",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "panel",
+        "value": "0 22px 38px -10px var(--color-panel-shadow), 0 5px 12px -5px var(--color-panel-shadow), inset 0 1px 0 var(--color-panel-edge), inset 0 -1px 0 var(--color-panel-shadow)",
+        "purpose": "Shared dimensional panel material."
+      },
+      {
+        "name": "action",
+        "value": "0 8px 24px rgb(0 174 226 / 16%)",
+        "purpose": "Primary modal actions."
+      },
+      {
+        "name": "menu",
+        "value": "0 18px 40px rgb(0 0 0 / 25%)",
+        "purpose": "Mobile navigation."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "wider-page-four-directions",
+        "value": "40rem"
+      },
+      {
+        "name": "content-columns",
+        "value": "48rem"
+      },
+      {
+        "name": "desktop-navigation",
+        "value": "64rem"
+      },
+      {
+        "name": "desktop-messengers",
+        "value": "75rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Shared modal action styling.",
+      "html": "<button type=\"button\" class=\"ds-primary\">Вызвать мастера</button>",
+      "css": ".ds-primary{min-height:3rem;padding:.8rem 1.25rem;border:1px solid transparent;border-radius:2rem;background:var(--color-primary);color:var(--color-primary-contrast);font-family:Manrope,sans-serif;font-size:.85rem;font-weight:750;box-shadow:0 8px 24px rgb(0 174 226 / 16%);cursor:pointer}.ds-primary:hover{filter:brightness(1.1)}.ds-primary:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "description": "Bordered services navigation.",
+      "html": "<a class=\"ds-secondary\" href=\"/services/\">Наши услуги</a>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.8rem 1.25rem;border:1px solid var(--color-border);border-radius:2rem;background:var(--color-panel);color:var(--color-text);font-family:Manrope,sans-serif;font-size:.85rem;font-weight:750;text-decoration:none}.ds-secondary:hover{background:var(--color-panel-hover)}.ds-secondary:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}"
+    },
+    {
+      "name": "Phone field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Shared Belarus-compatible contact-field presentation.",
+      "html": "<label class=\"ds-field\">Телефон<input type=\"tel\" placeholder=\"+375 (__) ___-__-__\"></label>",
+      "css": ".ds-field{display:grid;gap:.65rem;color:var(--color-text);font-family:Manrope,sans-serif;font-size:.85rem;font-weight:650}.ds-field input{min-width:0;min-height:3rem;padding:.85rem;border:1px solid var(--color-input-border);border-radius:.8rem;background:var(--color-background);color:var(--color-text);font:inherit;font-size:.95rem}.ds-field input::placeholder{color:var(--color-muted);opacity:1}.ds-field input:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}"
+    },
+    {
+      "name": "Dimensional card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Inner-page or contact container.",
+      "html": "<section class=\"ds-card\"><h3>Контакты</h3></section>",
+      "css": ".ds-card{padding:clamp(1.25rem,3vw,2rem);border:1px solid var(--color-border);border-radius:1rem;background:var(--panel-background);box-shadow:var(--panel-shadow);color:var(--color-text);font-family:Manrope,sans-serif}.ds-card h3{margin:0;font-size:1.15rem;line-height:1.2;letter-spacing:-.02em}"
+    },
+    {
+      "name": "Header navigation",
+      "kind": "nav",
+      "description": "Compact desktop navigation anchors.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Навигация\"><a href=\"/services/\">Услуги</a><a href=\"/contacts/\">Контакты</a></nav>",
+      "css": ".ds-nav{display:flex;gap:1.5rem;font-family:Manrope,sans-serif}.ds-nav a{display:inline-flex;align-items:center;min-height:2.75rem;color:var(--color-muted);font-size:.8rem;text-decoration:none}.ds-nav a:hover{color:var(--color-accent)}.ds-nav a:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Domestic engineering made tangible",
+    "overview": "The owner approved the navy/cyan domestic-engineering world, drop mark and dimensional glass panels for the complete existing site. A cinematic home introduction leads into calm service content; inner pages carry the same materials without repeating the room photograph. Dark is the default, with a persistent light alternative.",
+    "keyCharacteristics": [
+      "Domestic engineering imagery with readable HTML foreground.",
+      "Local Manrope, cyan actions and an approved drop mark.",
+      "Soft dimensional panels balanced with ruled editorial sections."
+    ],
+    "rules": [
+      {
+        "name": "The Semantic Theme Rule",
+        "body": "Use shared role tokens rather than copying a dark color into a new surface; saved light mode must remain coherent.",
+        "section": "colors"
+      },
+      {
+        "name": "The Material Continuity Rule",
+        "body": "Reuse the panel material for actual containers; retain open ruled sections for editorial content.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use shared semantic theme tokens across all routes.",
+      "Do keep the approved room illustration on the homepage and retain its illustration disclosure.",
+      "Do reuse approved contacts, services, SVG icons and the shared non-submitting form."
+    ],
+    "donts": [
+      "Don't present generated imagery as completed company work.",
+      "Don't invent projects, published articles, metrics or social destinations.",
+      "Don't simulate form delivery or introduce new business claims."
+    ]
+  }
+}
