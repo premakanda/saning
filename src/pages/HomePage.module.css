@@ -14,41 +14,12 @@
 .lead {
   font-size: clamp(1rem, 2vw, 1.15rem);
   color: var(--color-muted);
-  max-width: 52ch;
+  max-width: 65ch;
   margin-top: 0;
 }
 .note {
   font-size: 0.8rem;
   color: var(--color-muted);
-}
-.audience {
-  display: grid;
-  gap: 2rem;
-}
-.audienceList > div {
-  display: flex;
-  gap: 1.25rem;
-  padding-block: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
-}
-.audienceList > div:first-child {
-  padding-top: 0;
-}
-.audienceList > div:last-child {
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-.audienceList > div > span {
-  flex: none;
-  color: var(--color-accent);
-}
-.audienceList h3 {
-  margin: 0 0 0.75rem;
-}
-.audienceList p {
-  margin: 0;
-  color: var(--color-muted);
-  max-width: 50ch;
 }
 .principles,
 .steps {
@@ -61,8 +32,7 @@
 .principles li,
 .steps li {
   min-width: 0;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
+  padding: 1.5rem;
 }
 .principles li > span {
   color: var(--color-accent);
@@ -83,20 +53,45 @@
   color: var(--color-accent);
   font-variant-numeric: tabular-nums;
 }
-.cost {
+.stepHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.detail {
   display: grid;
   gap: 2rem;
+  align-items: center;
+  box-shadow:
+    var(--panel-shadow),
+    0 0 calc(26px * var(--glow, 0))
+      color-mix(in srgb, var(--color-accent) 16%, transparent);
 }
-.cost > div:first-child > span {
-  color: var(--color-accent);
-  margin-bottom: 1rem;
+.detail:focus-within {
+  --glow: 1;
+  border-color: var(--color-accent);
 }
-.cost p {
+.detail .detailLink {
+  margin-top: 1.5rem;
+}
+.detailTags {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.detailTags li {
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--color-border);
+  border-radius: 2rem;
   color: var(--color-muted);
-  margin-top: 0;
+  font-size: 0.8rem;
 }
-.cost a,
-.articleBand > a {
+.detailLink,
+.articleLink {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -105,13 +100,21 @@
   font-weight: 650;
   text-decoration: none;
 }
-.cost a:hover,
-.articleBand > a:hover {
+.detailLink:hover,
+.articleLink:hover {
   text-decoration: underline;
 }
 .articleBand {
   display: grid;
   gap: 1rem;
+  padding-inline: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background: var(--panel-background);
+  box-shadow: var(--panel-shadow);
+}
+.articleLink {
+  margin-top: 1.5rem;
 }
 .articleBand h2 {
   max-width: 40rem;
@@ -119,10 +122,70 @@
 .articleBand p {
   color: var(--color-muted);
   margin-bottom: 0;
+  max-width: 60ch;
 }
+.contact {
+  display: grid;
+  align-items: start;
+  gap: 2rem;
+  border-top: 0;
+  padding-top: 0;
+}
+.contactPhone {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3rem;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  font-size: clamp(1.1rem, 3vw, 1.45rem);
+  font-weight: 750;
+  text-decoration: none;
+}
+.email {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  overflow-wrap: anywhere;
+}
+.formPanel {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background: var(--panel-background);
+  box-shadow: var(--panel-shadow);
+}
+@media (min-width: 48rem) {
+  .detail {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  .principles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .articleBand {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 2rem;
+  }
+}
+@media (min-width: 64rem) {
+  .steps {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .faqSection {
   display: grid;
   gap: 1.5rem;
+  border-top: 0;
+}
+.faqSection h2 {
+  max-width: none;
+  text-align: center;
 }
 .faq details {
   border-bottom: 1px solid var(--color-border);
@@ -142,48 +205,4 @@
   color: var(--color-muted);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
-}
-.contact {
-  display: grid;
-  align-items: start;
-  gap: 2rem;
-}
-.contactPhone {
-  display: inline-flex;
-  align-items: center;
-  min-height: 3rem;
-  gap: 0.75rem;
-  margin-top: 1.25rem;
-  font-size: clamp(1.1rem, 3vw, 1.45rem);
-  font-weight: 750;
-  text-decoration: none;
-}
-.formPanel {
-  min-width: 0;
-  padding: clamp(1.25rem, 3vw, 2rem);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-panel);
-  background: var(--panel-background);
-  box-shadow: var(--panel-shadow);
-}
-@media (min-width: 48rem) {
-  .audience,
-  .cost,
-  .contact {
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-  }
-  .principles,
-  .steps {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .articleBand {
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 3rem;
-  }
-  .faqSection {
-    grid-template-columns: 1fr 1.5fr;
-    gap: 4rem;
-  }
 }

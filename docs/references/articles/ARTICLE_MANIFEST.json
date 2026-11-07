@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "modern-engineering-systems",
+    "title": "Современные инженерные системы для дома и квартиры",
+    "image": "/images/articles/modern-engineering-systems.webp",
+    "category": "Инженерные системы"
+  },
+  {
+    "slug": "pipes-for-heating-and-water-supply",
+    "title": "Какие трубы используют для отопления и водоснабжения",
+    "image": "/images/articles/pipes-for-heating-and-water-supply.webp",
+    "category": "Водоснабжение"
+  },
+  {
+    "slug": "comfortable-home-heating",
+    "title": "Как создать комфортный микроклимат в доме",
+    "image": "/images/articles/comfortable-home-heating.webp",
+    "category": "Отопление"
+  },
+  {
+    "slug": "single-vs-double-circuit-boiler",
+    "title": "Одноконтурный или двухконтурный котёл: что выбрать",
+    "image": "/images/articles/single-vs-double-circuit-boiler.webp",
+    "category": "Отопление"
+  },
+  {
+    "slug": "floor-heating-vs-radiators",
+    "title": "Тёплый пол, радиаторы или комбинированное отопление?",
+    "image": "/images/articles/floor-heating-vs-radiators.webp",
+    "category": "Отопление"
+  },
+  {
+    "slug": "water-filtration-for-home",
+    "title": "Очистка и фильтрация воды в частном доме",
+    "image": "/images/articles/water-filtration-for-home.webp",
+    "category": "Водоснабжение"
+  },
+  {
+    "slug": "sewerage-internal-external",
+    "title": "Внутренняя и наружная канализация: что важно предусмотреть",
+    "image": "/images/articles/sewerage-internal-external.webp",
+    "category": "Канализация"
+  },
+  {
+    "slug": "plan-engineering-before-renovation",
+    "title": "Когда планировать отопление и водоснабжение при строительстве или ремонте",
+    "image": "/images/articles/plan-engineering-before-renovation.webp",
+    "category": "Проектирование"
+  }
+]

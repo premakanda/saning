@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   left: var(--space-page);
-  z-index: 10;
+  z-index: 30;
   padding: 1rem;
   background: var(--color-surface);
   color: var(--color-text);

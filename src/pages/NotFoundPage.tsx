@@ -1,4 +1,5 @@
-﻿import { Icon } from '../components/Icon';
+import { Link } from 'react-router';
+import { Icon } from '../components/Icon';
 import styles from './InnerPage.module.css';
 export function meta() {
   return [
@@ -14,9 +15,9 @@ export default function NotFoundPage() {
         <p>
           Вернитесь на главную страницу, чтобы выбрать нужное направление услуг.
         </p>
-        <a href="/">
+        <Link to="/">
           На главную <Icon name="arrow-up-right" />
-        </a>
+        </Link>
       </div>
     </main>
   );

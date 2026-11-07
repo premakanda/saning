@@ -1,7 +1,7 @@
-﻿import { useRef } from 'react';
+import { Link } from 'react-router';
+import { useRef } from 'react';
 import { navigation } from '../config/contacts';
 import { Icon } from './Icon';
-import { MessengerLinks } from './MessengerLinks';
 import styles from './SiteLayout.module.css';
 
 export function MobileMenu() {
@@ -29,11 +29,10 @@ export function MobileMenu() {
         }}
       >
         {navigation.map((item) => (
-          <a href={item.href} key={item.href}>
+          <Link to={item.href} key={item.href}>
             {item.label}
-          </a>
+          </Link>
         ))}
-        <MessengerLinks />
       </nav>
     </details>
   );

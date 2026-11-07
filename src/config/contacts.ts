@@ -9,7 +9,7 @@
 };
 
 export const contacts: ContactConfig = {
-  brand: 'АкваЛайнПрофи',
+  brand: 'AquaTechPRO',
   description:
     'Монтаж и проектирование систем отопления, водоснабжения и канализации.',
   phone: {
@@ -24,6 +24,7 @@ export const contacts: ContactConfig = {
 };
 
 export const navigation = [
+  { label: 'Главная', href: '/' },
   { label: 'Услуги', href: '/services/' },
   { label: 'Статьи', href: '/articles/' },
   { label: 'Контакты', href: '/contacts/' },

@@ -1,12 +1,19 @@
-import { useLoaderData, type LoaderFunctionArgs } from 'react-router';
+﻿import {
+  Link,
+  useLoaderData,
+  type LoaderFunctionArgs,
+  type MetaArgs,
+} from 'react-router';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { ContactForm } from '../components/ContactForm';
-import { Icon } from '../components/Icon';
+import { Illustration } from '../components/Illustration';
 import { contacts } from '../config/contacts';
 import { services } from '../content/services';
-import { pageMeta } from '../lib/seo';
-import type { MetaArgs } from 'react-router';
-import styles from './InnerPage.module.css';
+import { media } from '../content/media';
+import { serviceMedia } from '../content/serviceMedia';
+import { absoluteUrl, pageMeta, serializeJsonLd } from '../lib/seo';
+import layout from './InnerPage.module.css';
+import styles from './ServicePage.module.css';
 export function loader({ params }: LoaderFunctionArgs) {
   const service = services.find((item) => item.id === params.service);
   if (!service) throw new Response('Not Found', { status: 404 });
@@ -19,15 +26,37 @@ export function meta({ data }: MetaArgs<typeof loader>) {
       { name: 'robots', content: 'noindex' },
     ];
   return pageMeta(
-    data.service.title,
-    `${data.service.description} ${contacts.region}`,
+    data.service.seo.title,
+    data.service.seo.description,
     data.service.path,
+    false,
+    serviceMedia[data.service.id]?.hero ??
+      (data.service.heroImage ? media[data.service.heroImage] : undefined),
   );
 }
 export default function ServicePage() {
   const { service } = useLoaderData<typeof loader>();
+  const illustrations = serviceMedia[service.id];
+  const image =
+    illustrations?.hero ??
+    (service.heroImage ? media[service.heroImage] : undefined);
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.title,
+    description: service.seo.description,
+    url: absoluteUrl(service.path),
+    areaServed: ['Минск', 'Минская область'],
+    provider: {
+      '@type': 'Organization',
+      name: contacts.brand,
+      url: absoluteUrl('/'),
+      telephone: contacts.phone.href.replace('tel:', ''),
+      email: contacts.email.label,
+    },
+  };
   return (
-    <main id="main-content" tabIndex={-1} className={styles.page}>
+    <main id="main-content" tabIndex={-1} className={layout.page}>
       <Breadcrumbs
         items={[
           { label: 'Главная', path: '/' },
@@ -35,58 +64,86 @@ export default function ServicePage() {
           { label: service.title, path: service.path },
         ]}
       />
-      <div className={styles.serviceIntro}>
-        <span>
-          <Icon name={service.icon} large />
-        </span>
-        <h1>{service.title}</h1>
-      </div>
-      <p className={styles.lead}>{service.description}</p>
-      <p>{contacts.region}</p>
-      <div className={styles.columns}>
+      <div className={styles.hero}>
         <div>
-          {service.sections.length > 0 && (
-            <section aria-labelledby="scope-title">
-              <h2 id="scope-title">Направления работ</h2>
-              {service.sections.map((section) => (
-                <section key={section} className={styles.subservice}>
-                  <h3>{section}</h3>
-                </section>
-              ))}
-            </section>
-          )}
-          {service.note && <p className={styles.note}>{service.note}</p>}
-          <section>
-            <h2>Обсудим вашу задачу</h2>
-            <p>
-              Расскажите об объекте и оборудовании по телефону. Состав работ и
-              условия уточняются индивидуально.
-            </p>
-            <a className={styles.call} href={contacts.phone.href}>
-              {contacts.phone.carrier} {contacts.phone.label}
-            </a>
-            <p>
-              <a href="/contacts/">Все контакты и режим работы</a>
-            </p>
-          </section>
+          <h1>{service.title}</h1>
+          <p className={layout.lead}>{service.intro}</p>
         </div>
-        <section className={styles.card} aria-labelledby="request-title">
-          <h2 id="request-title">Форма обращения</h2>
-          <ContactForm />
-        </section>
+        {image && <Illustration image={image} priority showCaption={false} />}
       </div>
-      <nav aria-label="Другие направления" className={styles.related}>
+      <section
+        className={`${styles.scope} ${illustrations ? styles.illustratedScope : ''}`}
+        aria-labelledby="scope-title"
+      >
+        <h2 id="scope-title">Что входит в направление</h2>
+        <div className={styles.workGrid}>
+          {service.sections.map((section) => {
+            const images = illustrations?.sections[section.heading] ?? [];
+            return (
+              <section
+                key={section.heading}
+                className={`${styles.workGroup} ${images.length ? styles.illustratedGroup : ''}`}
+              >
+                <div>
+                  <h3>{section.heading}</h3>
+                  <ul>
+                    {section.items.map((item) => (
+                      <li key={item}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                {images.length > 0 && (
+                  <div className={styles.workImages}>
+                    {images.map((image) => (
+                      <Illustration
+                        key={image.src}
+                        image={image}
+                        showCaption={false}
+                      />
+                    ))}
+                  </div>
+                )}
+              </section>
+            );
+          })}
+        </div>
+        {service.note && <p className={layout.note}>{service.note}</p>}
+      </section>
+      <section
+        className={styles.contact}
+        aria-labelledby="service-contact-title"
+      >
+        <div>
+          <h2 id="service-contact-title">Свяжитесь с нами</h2>
+          <p>{service.cta}</p>
+          <a className={layout.call} href={contacts.phone.href}>
+            {contacts.phone.carrier} {contacts.phone.label}
+          </a>
+          <p>
+            <a href={contacts.email.href}>{contacts.email.label}</a>
+          </p>
+          <Link to="/contacts/">Все контакты и режим работы</Link>
+        </div>
+        <div className={layout.card}>
+          <ContactForm />
+        </div>
+      </section>
+      <nav aria-label="Другие направления" className={layout.related}>
         <h2>Другие услуги</h2>
         <ul>
           {services
             .filter((item) => item.id !== service.id)
             .map((item) => (
               <li key={item.id}>
-                <a href={item.path}>{item.title}</a>
+                <Link to={item.path}>{item.title}</Link>
               </li>
             ))}
         </ul>
       </nav>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(schema) }}
+      />
     </main>
   );
 }

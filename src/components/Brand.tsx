@@ -1,28 +1,27 @@
 ﻿import styles from './Brand.module.css';
-export function Brand() {
+import { contacts } from '../config/contacts';
+import mark from '../assets/brand/aquatechpro-mark-48.webp';
+import markLarge from '../assets/brand/aquatechpro-mark-96.webp';
+
+export function Brand({ compact = false }: { compact?: boolean }) {
   return (
-    <span className={styles.brand}>
-      <svg
+    <span
+      className={`${styles.brand} ${compact ? styles.compact : ''}`}
+      role="img"
+      aria-label={contacts.brand}
+    >
+      <img
         className={styles.mark}
-        viewBox="0 0 36 44"
+        src={mark}
+        srcSet={`${mark} 48w, ${markLarge} 96w`}
+        sizes="28px"
+        width={48}
+        height={58}
+        alt=""
         aria-hidden="true"
-        focusable="false"
-      >
-        <path
-          d="M18 2C14 9 4 19 4 27a14 14 0 0 0 28 0C32 19 22 9 18 2Z"
-          fill="currentColor"
-        />
-        <path
-          d="M12 29v-7a6 6 0 0 1 12 0v7M12 25h12"
-          fill="none"
-          stroke="white"
-          strokeWidth="2.5"
-          strokeLinecap="round"
-        />
-      </svg>
-      <span>
-        Аква<span className={styles.accent}>Лайн</span>Профи
-      </span>
+        decoding="async"
+      />
+      <span className={styles.wordmark} aria-hidden="true" />
     </span>
   );
 }

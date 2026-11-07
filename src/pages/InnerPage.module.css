@@ -1,15 +1,15 @@
 ﻿.page {
   width: min(100% - 2 * var(--space-page), var(--width-content));
   margin-inline: auto;
-  padding-block: 1.5rem var(--space-section);
+  padding-block: 0.75rem var(--space-section);
   min-height: 65svh;
 }
 .page h1 {
   max-width: 48rem;
-  margin: 1.5rem 0;
+  margin: 0.75rem 0 1.5rem;
 }
 .page > h1 {
-  padding-top: 1rem;
+  padding-top: 0.5rem;
 }
 .lead {
   font-size: clamp(1rem, 2vw, 1.18rem);
@@ -17,25 +17,6 @@
   max-width: 65ch;
   color: var(--color-muted);
   margin-bottom: 2.5rem;
-}
-.serviceIntro {
-  display: grid;
-  gap: 1rem;
-  padding-top: 1rem;
-}
-.serviceIntro > span {
-  display: grid;
-  place-items: center;
-  width: 4rem;
-  height: 4rem;
-  border: 1px solid var(--color-border);
-  border-radius: 1rem;
-  color: var(--color-accent);
-  background: var(--panel-background);
-  box-shadow: var(--panel-shadow);
-}
-.serviceIntro h1 {
-  margin: 0;
 }
 .columns {
   display: grid;
@@ -97,17 +78,6 @@
   font-size: 0.875rem;
   padding-block: 1rem;
 }
-.subservice {
-  border-bottom: 1px solid var(--color-border);
-  padding-block: 1rem;
-}
-.subservice h3 {
-  font-size: 1.1rem;
-  margin: 0;
-}
-.columns .subservice + .subservice {
-  margin-top: 0;
-}
 .call {
   gap: 0.75rem;
   font-size: 1.1rem;
@@ -168,11 +138,6 @@
   .columns {
     grid-template-columns: 1.1fr 1fr;
     gap: 4rem;
-  }
-  .serviceIntro {
-    grid-template-columns: auto 1fr;
-    align-items: center;
-    gap: 1.5rem;
   }
   .related ul {
     grid-template-columns: repeat(3, minmax(0, 1fr));

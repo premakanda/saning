@@ -1,7 +1,7 @@
 .breadcrumbs {
   font-size: 0.875rem;
   color: var(--color-muted);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 .breadcrumbs ol {
   display: flex;
@@ -10,6 +10,7 @@
   align-items: center;
   list-style: none;
   padding: 0;
+  margin-block: 0.4375rem;
 }
 .breadcrumbs li {
   display: flex;

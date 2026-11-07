@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { absoluteUrl, serializeJsonLd } from '../lib/seo';
 import styles from './Breadcrumbs.module.css';
 export type BreadcrumbItem = { label: string; path: string };
@@ -21,7 +22,7 @@ export function Breadcrumbs({ items }: { items: readonly BreadcrumbItem[] }) {
               {index === items.length - 1 ? (
                 <span aria-current="page">{item.label}</span>
               ) : (
-                <a href={item.path}>{item.label}</a>
+                <Link to={item.path}>{item.label}</Link>
               )}
             </li>
           ))}

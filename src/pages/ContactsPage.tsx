@@ -41,7 +41,7 @@ export default function ContactsPage() {
           ))}
         </section>
         <section className={styles.card} aria-labelledby="request-title">
-          <h2 id="request-title">Обсудить задачу</h2>
+          <h2 id="request-title">Свяжитесь с нами</h2>
           <ContactForm />
         </section>
       </div>

@@ -1,0 +1,96 @@
+.card {
+  --glow: 0;
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-panel);
+  background: var(--panel-background);
+  box-shadow: var(--panel-shadow);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(
+    ellipse at var(--glow-origin, 15% 0%),
+    color-mix(in srgb, var(--color-accent) 26%, transparent),
+    color-mix(in srgb, var(--color-accent) 5%, transparent) 60%,
+    transparent
+  );
+  opacity: var(--glow);
+  transition: opacity 220ms ease;
+}
+.alwaysLit {
+  --glow: 1;
+  --glow-origin: 0% 0%;
+}
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent) 28%, transparent);
+  border-radius: var(--radius-control);
+  color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 8%, transparent);
+  box-shadow: inset 0 1px 0 var(--color-panel-edge);
+}
+.icon > span {
+  filter: drop-shadow(
+    0 0 3px color-mix(in srgb, var(--color-accent) 25%, transparent)
+  );
+  transition: filter 220ms ease;
+}
+.card:focus-visible,
+.card:active {
+  --glow: 1;
+}
+@media (hover: hover) {
+  .card:hover {
+    --glow: 1;
+  }
+}
+.card:has(> .icon),
+.card:has(> div > .icon) {
+  box-shadow:
+    var(--panel-shadow),
+    0 0 calc(26px * var(--glow))
+      color-mix(in srgb, var(--color-accent) 16%, transparent);
+}
+.card:where(:focus-visible, :active) {
+  border-color: var(--color-accent);
+}
+.card .icon {
+  box-shadow:
+    inset 0 1px 0 var(--color-panel-edge),
+    0 0 calc(24px * var(--glow))
+      color-mix(in srgb, var(--color-accent) 32%, transparent);
+  transition: box-shadow 220ms ease;
+}
+.card .icon > span {
+  filter: drop-shadow(
+    0 0 calc(3px + 5px * var(--glow))
+      color-mix(in srgb, var(--color-accent) 65%, transparent)
+  );
+}
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--color-accent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::before,
+  .card .icon,
+  .icon > span {
+    transition: none;
+  }
+}

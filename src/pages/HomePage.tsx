@@ -1,14 +1,24 @@
-﻿import styles from './HomePage.module.css';
+﻿import { Link } from 'react-router';
+import styles from './HomePage.module.css';
+import glow from '../components/CardGlow.module.css';
 import { ServicesGrid } from '../components/ServicesGrid';
 import { Hero } from '../components/Hero';
 import { ProcessSteps } from '../components/ProcessSteps';
 import { ArticlesPreview } from '../components/ArticlesPreview';
 import { ContactForm } from '../components/ContactForm';
+import { Illustration } from '../components/Illustration';
 import { Icon } from '../components/Icon';
 import { contacts } from '../config/contacts';
+import { media } from '../content/media';
 import { pageMeta } from '../lib/seo';
 export function meta() {
-  return pageMeta('Сантехнические работы', contacts.description, '/');
+  return pageMeta(
+    'Монтаж отопления, водоснабжения и канализации в Минске',
+    'Проектирование и монтаж систем отопления, водоснабжения и канализации в Минске и Минской области. Котельные, радиаторы, тёплый пол и сантехническое оборудование.',
+    '/',
+    false,
+    media.hero,
+  );
 }
 export default function HomePage() {
   return (
@@ -16,93 +26,71 @@ export default function HomePage() {
       <Hero />
       <ServicesGrid />
       <section
-        className={`${styles.section} ${styles.audience}`}
-        aria-labelledby="audience-title"
-      >
-        <h2 id="audience-title">
-          Для квартиры
-          <br />и частного дома
-        </h2>
-        <div className={styles.audienceList}>
-          <div>
-            <Icon name="faucet" large />
-            <div>
-              <h3>Для квартиры</h3>
-              <p>
-                Замена сантехники, подключение оборудования, работы с
-                водоснабжением и отоплением — по согласованному перечню.
-              </p>
-            </div>
-          </div>
-          <div>
-            <Icon name="heating" large />
-            <div>
-              <h3>Для частного дома</h3>
-              <p>
-                Инженерные системы, разводка труб, оборудование котельной и
-                монтаж сантехники — в пределах подтверждённой специализации.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
         id="about"
         className={styles.section}
-        aria-labelledby="trust-title"
+        aria-labelledby="approach-title"
       >
-        <h2 id="trust-title">Что важно при выборе мастера</h2>
+        <h2 id="approach-title">
+          Инженерные системы под задачи вашего объекта
+        </h2>
         <p className={styles.lead}>
-          Перед началом работ важно обсудить задачу, материалы и ожидаемый
-          результат.
+          Каждый дом и квартира отличаются планировкой, расположением
+          оборудования и точками подключения. Поэтому перед монтажом важно
+          продумать схему трубопроводов, доступ к запорной арматуре, размещение
+          коллекторов и возможность дальнейшего обслуживания системы.
         </p>
         <ul className={styles.principles}>
-          <li>
-            <Icon name="wrench" large />
+          <li className={glow.card}>
+            <span className={`${glow.icon} ${glow.alwaysLit}`}>
+              <Icon name="pipes" large />
+            </span>
+            <h3>Продуманная компоновка</h3>
+            <p>
+              Размещение оборудования и узлов с учётом доступа для эксплуатации
+              и обслуживания.
+            </p>
+          </li>
+          <li className={glow.card}>
+            <span className={`${glow.icon} ${glow.alwaysLit}`}>
+              <Icon name="wrench" large />
+            </span>
             <h3>Понятный состав работ</h3>
             <p>
-              Какие операции нужны, что входит в задачу и какие материалы
-              потребуются.
+              Обсуждаем, какие материалы, подключения и этапы нужны именно на
+              вашем объекте.
             </p>
           </li>
-          <li>
-            <Icon name="valve" large />
-            <h3>Обсуждение условий</h3>
+          <li className={glow.card}>
+            <span className={`${glow.icon} ${glow.alwaysLit}`}>
+              <Icon name="check" large />
+            </span>
+            <h3>От монтажа до проверки</h3>
             <p>
-              Объём монтажа, особенности объекта и факторы, влияющие на
-              стоимость.
+              Предусматриваем контроль герметичности и работоспособности
+              смонтированных участков.
             </p>
-          </li>
-          <li>
-            <Icon name="phone" large />
-            <h3>Удобный способ связи</h3>
-            <p>Возможность описать задачу и уточнить детали до начала работ.</p>
           </li>
         </ul>
       </section>
-      <ProcessSteps />
       <section
-        id="cost"
-        className={`${styles.section} ${styles.cost}`}
-        aria-labelledby="cost-title"
+        className={`${styles.section} ${styles.detail} ${styles.articleBand} ${glow.card} ${glow.alwaysLit}`}
+        aria-labelledby="detail-title"
       >
+        <Illustration image={media.implementation} showCaption={false} />
         <div>
-          <Icon name="pipes" large />
-          <h2 id="cost-title">От чего зависит стоимость работ</h2>
-        </div>
-        <div>
-          <p>
-            Цена зависит от вида работ, состояния существующих коммуникаций,
-            объёма монтажа, доступности оборудования и необходимых материалов.
+          <h2 id="detail-title">От идеи до реализации</h2>
+          <p className={styles.lead}>
+            Монтаж отопления и водоснабжения включает не только трубы и
+            оборудование. Важны также коллекторы, насосные группы, фильтры,
+            клапаны, правильная организация контуров и доступность узлов для
+            обслуживания.
           </p>
-          <p>
-            Опишите задачу — уточним детали и обсудим стоимость до начала работ.
-          </p>
-          <a href={contacts.phone.href}>
-            Обсудить по телефону <Icon name="arrow-up-right" />
-          </a>
+          <Link className={styles.detailLink} to="/services/">
+            Перейти к услугам <Icon name="arrow-up-right" />
+          </Link>
         </div>
       </section>
+      <ProcessSteps />
       <ArticlesPreview />
       <section
         id="faq"
@@ -115,7 +103,7 @@ export default function HomePage() {
             <summary>Какие сантехнические работы можно заказать?</summary>
             <p>
               Четыре подтверждённых направления перечислены на странице{' '}
-              <a href="/services/">«Услуги»</a>. Конкретный состав работ
+              <Link to="/services/">«Услуги»</Link>. Конкретный состав работ
               обсуждается отдельно.
             </p>
           </details>
@@ -135,24 +123,10 @@ export default function HomePage() {
       <section
         id="contacts"
         className={`${styles.section} ${styles.contact}`}
-        aria-labelledby="contact-title"
+        aria-labelledby="home-contact-title"
       >
-        <div>
-          <h2 id="contact-title">
-            Нужна помощь
-            <br />с сантехникой?
-          </h2>
-          <p className={styles.lead}>
-            Расскажите об объекте и оборудовании по телефону. Состав работ и
-            условия уточняются индивидуально.
-          </p>
-          <a className={styles.contactPhone} href={contacts.phone.href}>
-            <Icon name="phone" />
-            {contacts.phone.label}
-          </a>
-          <p className={styles.note}>{contacts.region}</p>
-        </div>
         <div className={styles.formPanel}>
+          <h2 id="home-contact-title">Свяжитесь с нами</h2>
           <ContactForm />
         </div>
       </section>

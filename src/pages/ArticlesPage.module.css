@@ -1,0 +1,69 @@
+.grid {
+  display: grid;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.grid > li,
+.entry {
+  min-width: 0;
+  height: 100%;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.card > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-panel) var(--radius-panel) 0 0;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+}
+.meta {
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  margin: 0 0 1rem;
+}
+.copy h2 {
+  margin: 0 0 1rem;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.description {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  margin: 0 0 1.5rem;
+}
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 2.75rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+.card:hover .more,
+.card:focus-visible .more {
+  text-decoration: underline;
+}
+@media (min-width: 40rem) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 64rem) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

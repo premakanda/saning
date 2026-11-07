@@ -1,0 +1,56 @@
+[
+  {
+    "path": "/images/hero/engineering-boiler-room.webp",
+    "description": "Hero главной: котельная с оборудованием и аккуратной обвязкой",
+    "format": "webp",
+    "width": 1536,
+    "height": 1024,
+    "source": "original AI-generated illustration",
+    "file": "public/images/hero/engineering-boiler-room.webp"
+  },
+  {
+    "path": "/images/services/heating/boiler-room-overview.webp",
+    "description": "3D иллюстрация котельной с котлом и бойлером; исходная картинка содержит встроенный текст",
+    "format": "webp",
+    "width": 1672,
+    "height": 941,
+    "source": "original AI-generated illustration",
+    "file": "public/images/services/heating/boiler-room-overview.webp"
+  },
+  {
+    "path": "/images/services/heating/heating-system.webp",
+    "description": "Обвязка котельной, насосные группы, коллекторы",
+    "format": "webp",
+    "width": 1536,
+    "height": 1024,
+    "source": "original AI-generated illustration",
+    "file": "public/images/services/heating/heating-system.webp"
+  },
+  {
+    "path": "/images/services/water-supply/water-supply-manifold.webp",
+    "description": "Узел ХВС и ГВС со счётчиками, фильтрами, редукторами и гребёнками",
+    "format": "webp",
+    "width": 1448,
+    "height": 1086,
+    "source": "original AI-generated illustration",
+    "file": "public/images/services/water-supply/water-supply-manifold.webp"
+  },
+  {
+    "path": "/images/services/water-supply/water-meters-and-filters.webp",
+    "description": "Фильтры и водомеры на металлической панели",
+    "format": "webp",
+    "width": 1199,
+    "height": 1312,
+    "source": "original AI-generated illustration",
+    "file": "public/images/services/water-supply/water-meters-and-filters.webp"
+  },
+  {
+    "path": "/images/services/water-supply/collectors-and-towel-rail.webp",
+    "description": "Коллекторы, трубопроводы, полотенцесушитель",
+    "format": "webp",
+    "width": 1312,
+    "height": 1199,
+    "source": "original AI-generated illustration",
+    "file": "public/images/services/water-supply/collectors-and-towel-rail.webp"
+  }
+]

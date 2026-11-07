@@ -12,3 +12,6 @@ dist/
 .DS_Store
 .impeccable/questions/
 .impeccable/review/
+
+# Original delivery packs and uploads are archived locally.
+/archive/

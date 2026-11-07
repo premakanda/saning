@@ -52,7 +52,7 @@ const topics = [
 
 export function meta() {
   return [
-    { title: 'Дизайн-концепции | АкваЛайнПрофи' },
+    { title: `Дизайн-концепции | ${contacts.brand}` },
     { name: 'robots', content: 'noindex, nofollow' },
   ];
 }

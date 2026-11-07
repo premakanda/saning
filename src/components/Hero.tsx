@@ -1,6 +1,5 @@
-﻿import { openContactModal } from '../lib/openContactModal';
+import { openContactModal } from '../lib/openContactModal';
 import { contacts } from '../config/contacts';
-import { services } from '../content/services';
 import { Icon } from './Icon';
 import styles from './Hero.module.css';
 import layout from './SiteLayout.module.css';
@@ -33,18 +32,6 @@ export function Hero() {
           {contacts.region}
         </p>
       </div>
-      <nav className={styles.directions} aria-label="Четыре направления услуг">
-        {services.map((service) => (
-          <a href={service.path} key={service.id}>
-            <span className={styles.directionIcon}>
-              <Icon name={service.icon} />
-            </span>
-            <span>{service.title}</span>
-            <Icon name="arrow-up-right" />
-          </a>
-        ))}
-      </nav>
-      <p className={styles.caption}>3D-иллюстрация инженерной системы</p>
     </section>
   );
 }

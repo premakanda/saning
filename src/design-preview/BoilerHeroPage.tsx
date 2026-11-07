@@ -16,7 +16,7 @@ import styles from './BoilerHero.module.css';
 
 export function meta() {
   return [
-    { title: 'Первый экран · Premium Engineering | АкваЛайнПрофи' },
+    { title: `Первый экран · Premium Engineering | ${contacts.brand}` },
     { name: 'robots', content: 'noindex, nofollow' },
   ];
 }

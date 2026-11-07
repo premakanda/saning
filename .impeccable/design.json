@@ -1,7 +1,7 @@
-{
+﻿{
   "schemaVersion": 2,
-  "generatedAt": "2026-11-06T19:17:39.030Z",
-  "title": "Design System: АкваЛайнПрофи",
+  "generatedAt": "2026-11-07T15:07:52.0997882Z",
+  "title": "Design System: AquaTechPRO",
   "extensions": {
     "shadows": [
       {
@@ -23,19 +23,19 @@
     "motion": [],
     "breakpoints": [
       {
-        "name": "wider-page-four-directions",
+        "name": "wider-page",
         "value": "40rem"
       },
       {
-        "name": "content-columns",
+        "name": "content-service-work-columns-footer",
         "value": "48rem"
       },
       {
-        "name": "desktop-navigation",
+        "name": "desktop-navigation-four-process-steps",
         "value": "64rem"
       },
       {
-        "name": "desktop-messengers",
+        "name": "desktop-action-spacing",
         "value": "75rem"
       }
     ]
@@ -46,14 +46,14 @@
       "kind": "button",
       "refersTo": "button-primary",
       "description": "Shared modal action styling.",
-      "html": "<button type=\"button\" class=\"ds-primary\">Вызвать мастера</button>",
+      "html": "\u003cbutton type=\"button\" class=\"ds-primary\"\u003eВызвать мастера\u003c/button\u003e",
       "css": ".ds-primary{min-height:3rem;padding:.8rem 1.25rem;border:1px solid transparent;border-radius:2rem;background:var(--color-primary);color:var(--color-primary-contrast);font-family:Manrope,sans-serif;font-size:.85rem;font-weight:750;box-shadow:0 8px 24px rgb(0 174 226 / 16%);cursor:pointer}.ds-primary:hover{filter:brightness(1.1)}.ds-primary:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}"
     },
     {
       "name": "Secondary action",
       "kind": "button",
       "description": "Bordered services navigation.",
-      "html": "<a class=\"ds-secondary\" href=\"/services/\">Наши услуги</a>",
+      "html": "\u003ca class=\"ds-secondary\" href=\"/services/\"\u003eНаши услуги\u003c/a\u003e",
       "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:3rem;padding:.8rem 1.25rem;border:1px solid var(--color-border);border-radius:2rem;background:var(--color-panel);color:var(--color-text);font-family:Manrope,sans-serif;font-size:.85rem;font-weight:750;text-decoration:none}.ds-secondary:hover{background:var(--color-panel-hover)}.ds-secondary:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}"
     },
     {
@@ -61,22 +61,22 @@
       "kind": "input",
       "refersTo": "input",
       "description": "Shared Belarus-compatible contact-field presentation.",
-      "html": "<label class=\"ds-field\">Телефон<input type=\"tel\" placeholder=\"+375 (__) ___-__-__\"></label>",
+      "html": "\u003clabel class=\"ds-field\"\u003eТелефон\u003cinput type=\"tel\" placeholder=\"+375 (__) ___-__-__\"\u003e\u003c/label\u003e",
       "css": ".ds-field{display:grid;gap:.65rem;color:var(--color-text);font-family:Manrope,sans-serif;font-size:.85rem;font-weight:650}.ds-field input{min-width:0;min-height:3rem;padding:.85rem;border:1px solid var(--color-input-border);border-radius:.8rem;background:var(--color-background);color:var(--color-text);font:inherit;font-size:.95rem}.ds-field input::placeholder{color:var(--color-muted);opacity:1}.ds-field input:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}"
     },
     {
       "name": "Dimensional card",
       "kind": "card",
       "refersTo": "card",
-      "description": "Inner-page or contact container.",
-      "html": "<section class=\"ds-card\"><h3>Контакты</h3></section>",
+      "description": "Shared inner/contact material; service cards also include approved short descriptions. Illustration figures retain natural aspect ratio with these panel borders and shadows.",
+      "html": "\u003csection class=\"ds-card\"\u003e\u003ch3\u003eКонтакты\u003c/h3\u003e\u003c/section\u003e",
       "css": ".ds-card{padding:clamp(1.25rem,3vw,2rem);border:1px solid var(--color-border);border-radius:1rem;background:var(--panel-background);box-shadow:var(--panel-shadow);color:var(--color-text);font-family:Manrope,sans-serif}.ds-card h3{margin:0;font-size:1.15rem;line-height:1.2;letter-spacing:-.02em}"
     },
     {
       "name": "Header navigation",
       "kind": "nav",
-      "description": "Compact desktop navigation anchors.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"Навигация\"><a href=\"/services/\">Услуги</a><a href=\"/contacts/\">Контакты</a></nav>",
+      "description": "Four shared routes use React Router Link rendered as SSR anchors. Full-width sticky header has top:0, z-index:20, 94%-opaque theme fill and 10px blur; inner responsive dimensions are unchanged.",
+      "html": "\u003cnav class=\"ds-nav\" aria-label=\"Навигация\"\u003e\u003ca href=\"/\"\u003eГлавная\u003c/a\u003e\u003ca href=\"/services/\"\u003eУслуги\u003c/a\u003e\u003ca href=\"/contacts/\"\u003eКонтакты\u003c/a\u003e\u003c/nav\u003e",
       "css": ".ds-nav{display:flex;gap:1.5rem;font-family:Manrope,sans-serif}.ds-nav a{display:inline-flex;align-items:center;min-height:2.75rem;color:var(--color-muted);font-size:.8rem;text-decoration:none}.ds-nav a:hover{color:var(--color-accent)}.ds-nav a:focus-visible{outline:3px solid var(--color-focus);outline-offset:4px}"
     }
   ],
@@ -102,13 +102,13 @@
     ],
     "dos": [
       "Do use shared semantic theme tokens across all routes.",
-      "Do keep the approved room illustration on the homepage and retain its illustration disclosure.",
+      "Do keep the approved room illustration on the homepage without representing it as project photography.",
       "Do reuse approved contacts, services, SVG icons and the shared non-submitting form."
     ],
     "donts": [
-      "Don't present generated imagery as completed company work.",
-      "Don't invent projects, published articles, metrics or social destinations.",
-      "Don't simulate form delivery or introduce new business claims."
+      "Don\u0027t present generated imagery as completed company work.",
+      "Don\u0027t invent projects, published articles, metrics or social destinations.",
+      "Don\u0027t simulate form delivery or introduce new business claims."
     ]
   }
 }

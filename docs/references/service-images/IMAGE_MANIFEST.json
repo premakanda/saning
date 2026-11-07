@@ -1,0 +1,61 @@
+{
+  "note": "Иллюстрации сгенерированы ИИ, НЕ фото выполненных компанией работ. Не использовать как технические монтажные схемы.",
+  "images": [
+    {
+      "path": "/images/services/sewerage/internal-sewerage-cutaway-01.webp",
+      "title": "Внутренняя канализация в квартире и доме",
+      "placement": "Главная иллюстрация страницы /services/sewerage/ либо секция «Внутренняя канализация»",
+      "alt": "Разводка серых канализационных труб от душевой, унитаза, раковины и кухни, стояк",
+      "category": "sewerage"
+    },
+    {
+      "path": "/images/services/sewerage/external-sewerage-trench-01.webp",
+      "title": "Наружная канализация — рыжая труба",
+      "placement": "Секция «Наружная канализация» на /services/sewerage/",
+      "alt": "Рыжие канализационные трубы в траншее рядом с домом и ревизионный колодец",
+      "category": "sewerage"
+    },
+    {
+      "path": "/images/services/sewerage/external-sewerage-septic-02.webp",
+      "title": "Наружная канализация — подвод к ёмкости",
+      "placement": "Дополнительная иллюстрация наружной канализации (только если упоминается соответствующее подключение)",
+      "alt": "Рыжие трубы и ревизионный колодец, подключение к накопительной ёмкости",
+      "category": "sewerage"
+    },
+    {
+      "path": "/images/services/sanitary-installation/sanitary-bathroom-installation-01.webp",
+      "title": "Установка сантехнических приборов в ванной",
+      "placement": "Основная иллюстрация страницы /services/sanitary-installation/",
+      "alt": "Душевая, умывальник, унитаз и показанные подключения",
+      "category": "sanitary-installation"
+    },
+    {
+      "path": "/images/services/sanitary-installation/sanitary-fixtures-montage-02.webp",
+      "title": "Установка сантехники в ванной и на кухне",
+      "placement": "Обзорная секция «Что устанавливаем»",
+      "alt": "Ванна, душевая, кухонная мойка, унитаз, раковины, смесители",
+      "category": "sanitary-installation"
+    },
+    {
+      "path": "/images/services/sanitary-installation/mixer-installation-detail-03.webp",
+      "title": "Подключение смесителя",
+      "placement": "Секция «Установка смесителей»",
+      "alt": "Хромированный смеситель с подводкой горячей и холодной воды",
+      "category": "sanitary-installation"
+    },
+    {
+      "path": "/images/services/sanitary-installation/shower-cabin-installation-detail-04.webp",
+      "title": "Монтаж душевой кабины",
+      "placement": "Секция «Душевые кабины и поддоны»",
+      "alt": "Стеклянная душевая кабина, смеситель, поддон, детали подключений",
+      "category": "sanitary-installation"
+    },
+    {
+      "path": "/images/services/sanitary-installation/fixtures-and-shower-set-05.webp",
+      "title": "Монтаж смесителя и душевой системы",
+      "placement": "Дополнительная иллюстрация секции «Смесители и душевые системы»",
+      "alt": "Смеситель, встроенный душевой узел, душевая лейка, подключения",
+      "category": "sanitary-installation"
+    }
+  ]
+}

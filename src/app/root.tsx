@@ -11,6 +11,7 @@ import '../styles/global.css';
 import { SiteLayout } from '../components/SiteLayout';
 import styles from './RootLayout.module.css';
 import { themeBootstrap } from '../lib/themeBootstrap';
+import manropeFont from '../assets/fonts/manrope.ttf?url';
 
 export function Layout({ children }: { children: ReactNode }) {
   const isDesignPreview = useLocation().pathname.startsWith('/design-preview/');
@@ -23,6 +24,25 @@ export function Layout({ children }: { children: ReactNode }) {
           <meta name="robots" content="noindex, follow" />
         )}
         <meta name="color-scheme" content="light dark" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="64x64"
+          href="/favicon-64.png"
+        />
+        <link
+          rel="preload"
+          href={manropeFont}
+          as="font"
+          type="font/ttf"
+          crossOrigin="anonymous"
+        />
         <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
         <Meta />
         <Links />

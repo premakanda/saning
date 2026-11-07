@@ -14,7 +14,7 @@ export async function finalizeBuild(siteUrl, directory = 'dist/client') {
     );
   await writeFile(
     join(directory, '_headers'),
-    `/*\n  X-Content-Type-Options: nosniff\n${preview ? '  X-Robots-Tag: noindex, follow\n' : ''}`,
+    `/*\n  X-Content-Type-Options: nosniff\n${preview ? '  X-Robots-Tag: noindex, follow\n' : ''}\n/assets/*\n  Cache-Control: public, max-age=31536000, immutable\n`,
   );
   if (!siteUrl) return;
   const urls = new Set();

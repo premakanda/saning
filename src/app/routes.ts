@@ -1,4 +1,5 @@
 import { index, route, type RouteConfig } from '@react-router/dev/routes';
+import { readPublishedArticles } from '../lib/articles.server';
 
 export default [
   index('pages/HomePage.tsx'),
@@ -6,7 +7,12 @@ export default [
   route('services/:service', 'pages/ServicePage.tsx'),
   route('contacts', 'pages/ContactsPage.tsx'),
   route('articles', 'pages/ArticlesPage.tsx'),
-  route('404', 'pages/NotFoundPage.tsx'),
+  ...readPublishedArticles().map((article) =>
+    route(`articles/${article.slug}`, 'pages/ArticlePage.tsx', {
+      id: `article-${article.slug}`,
+    }),
+  ),
+  route('*', 'pages/NotFoundPage.tsx'),
   ...(process.env.VITE_LOCAL_PROTOTYPE === 'true' ||
   process.argv.includes('dev')
     ? [

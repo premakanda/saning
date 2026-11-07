@@ -5,6 +5,8 @@
   font-display: swap;
 }
 :root {
+  scrollbar-gutter: stable;
+  scroll-padding-top: calc(var(--height-header) + 1rem);
   font-family: 'Manrope', sans-serif;
   color-scheme: dark;
   --color-text: #f5faff;
@@ -37,12 +39,15 @@
   --space-page: 1rem;
   --space-section: clamp(3.5rem, 8vw, 6.5rem);
   --width-content: 70rem;
+  --height-header: 4.75rem;
+  --header-background: rgb(3 14 29 / 94%);
   color: var(--color-text);
   background: var(--color-background);
   caret-color: var(--color-accent);
   scrollbar-color: var(--color-border) var(--color-background);
 }
 :root[data-theme='light'] {
+  --header-background: rgb(237 245 250 / 94%);
   color-scheme: light;
   --color-text: #09263c;
   --color-muted: #36546b;
@@ -111,5 +116,10 @@ h3 {
 @media (min-width: 40rem) {
   :root {
     --space-page: 2rem;
+  }
+}
+@media (min-width: 64rem) {
+  :root {
+    --height-header: 5.5rem;
   }
 }

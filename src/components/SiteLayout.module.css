@@ -49,14 +49,21 @@
     ),
     linear-gradient(0deg, var(--color-background), transparent 35%);
 }
+.headerShell {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--header-background);
+  backdrop-filter: blur(10px);
+}
 .header {
   position: relative;
   z-index: 5;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.5rem;
-  width: min(100% - 2 * var(--space-page), var(--width-content));
+  gap: 0.25rem;
+  width: min(100% - 1.5rem, var(--width-content));
   margin-inline: auto;
   padding-block: 1rem;
 }
@@ -66,26 +73,51 @@
   min-height: 2.75rem;
   text-decoration: none;
 }
+.header > .brand {
+  min-width: 1.75rem;
+  justify-content: center;
+}
 .actions {
   display: flex;
   align-items: center;
-  gap: 0.1rem;
+  justify-content: end;
+  gap: clamp(0.1rem, 0.5vw, 0.35rem);
+  flex: 1;
+  min-width: 0;
 }
 .phone {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.75rem;
   min-height: 2.75rem;
-  border-radius: 50%;
   text-decoration: none;
   color: var(--color-text);
+  font-size: 0.75rem;
+  font-weight: 750;
+  white-space: nowrap;
 }
-.phone span:not([aria-hidden]) {
+.phoneCarrier {
   display: none;
 }
-.desktopNav,
-.desktopMessengers {
+.desktopMessengers > div {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+.desktopMessengers > div > span {
+  width: 1.5rem;
+  height: 2rem;
+  border: 0;
+}
+.desktopMessengers > div > span > span {
+  width: 1rem;
+  height: 1rem;
+}
+.actions > button {
+  min-width: 2rem;
+  min-height: 2rem;
+  padding: 0.25rem;
+}
+.desktopNav {
   display: none;
 }
 .primary {
@@ -120,8 +152,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2.75rem;
-  min-height: 2.75rem;
+  width: 2rem;
+  min-height: 2rem;
   cursor: pointer;
   list-style: none;
   border-radius: 50%;
@@ -213,6 +245,9 @@
   font-size: 0.72rem;
 }
 @media (min-width: 40rem) {
+  .header {
+    width: min(100% - 2 * var(--space-page), var(--width-content));
+  }
   .homeBackdrop img {
     object-position: 60% center;
     opacity: 0.8;
@@ -220,8 +255,8 @@
 }
 @media (min-width: 48rem) {
   .footerGrid {
-    grid-template-columns: 2fr 1fr;
-    gap: 6rem;
+    grid-template-columns: 1.5fr 0.8fr 1.2fr;
+    gap: clamp(1.5rem, 4vw, 4rem);
   }
 }
 @media (min-width: 64rem) {
@@ -245,6 +280,32 @@
   }
   .desktopNav a:hover {
     color: var(--color-accent);
+  }
+  .header > .brand {
+    min-width: 2.75rem;
+    justify-content: start;
+  }
+  .actions > button {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.6rem;
+  }
+  .desktopMessengers > div {
+    gap: 0.5rem;
+  }
+  .desktopMessengers > div > span {
+    width: 2.75rem;
+    height: 2.75rem;
+    border: 1px solid var(--color-border);
+  }
+  .desktopMessengers > div > span > span {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .actions {
+    display: flex;
+    flex: initial;
+    gap: 0.45rem;
   }
   .phone {
     width: auto;

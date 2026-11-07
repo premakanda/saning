@@ -49,6 +49,10 @@ test('sitemap uses generated canonical pages and excludes noindex pages', async 
         'noindex',
       ),
     );
+    assert.match(
+      await readFile(join(directory, '_headers'), 'utf8'),
+      /\/assets\/\*\n\x20{2}Cache-Control: public, max-age=31536000, immutable/,
+    );
     await assert.rejects(access(join(directory, '__spa-fallback.html')));
     assert.equal(
       await readFile(join(directory, '404.html'), 'utf8'),

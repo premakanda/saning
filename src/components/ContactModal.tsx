@@ -15,7 +15,7 @@ export function ContactModal() {
       onClose={() => setVersion((value) => value + 1)}
     >
       <div className={styles.heading}>
-        <h2 id="modal-title">Вызвать мастера</h2>
+        <h2 id="modal-title">Свяжитесь с нами</h2>
         <button
           type="button"
           aria-label="Закрыть форму"
