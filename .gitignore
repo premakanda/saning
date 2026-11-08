@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .react-router/
+.vercel/
 .npm-cache/
 .env
 .env.*
